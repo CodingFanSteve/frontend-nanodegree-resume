@@ -115,8 +115,12 @@ function inName(name) {
 	var names = name.trim().split(" ");
 
 	names[0] = names[0].slice(0, 1).toUpperCase() + names[0].slice(1).toLowerCase();
-	names[1] = names[1].toUpperCase();
-	return names[0] + " " + names[1];
+
+	for (var i = 1; i < names.length; i++) {
+		names[i] = names[i].toUpperCase();
+	}
+
+	return names.join(" ");
 }
 
 $("#main").append(internationalizeButton);
